@@ -1,1 +1,0 @@
-# DerrickNg_Cybertruck
