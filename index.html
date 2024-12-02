@@ -3,69 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Cybertruck World</title>
+    <title>Big Yellow Duck's Cybertruck Showcase</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 0;
             margin: 0;
-            height: 100vh;
+            padding: 0;
+            background: linear-gradient(135deg, #ffc0cb, #ff69b4); /* Vibrant gradient background */
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #ffda29; /* Bright yellow */
+            color: #000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            font-family: 'Impact', sans-serif;
+            letter-spacing: 3px;
+            animation: textGlow 1.5s infinite alternate;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffd700, 0 0 40px #ffd700;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700;
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .section {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .section h2 {
+            font-size: 2.5rem;
+            color: #ffda29;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        .photos {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
         }
-
-        h1 {
-            font-size: 4rem;
-            color: #0ff;
+        .photos img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ffda29;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        p {
-            font-size: 1.5rem;
-            color: #aaa;
+        .photos img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-
-        a {
-            text-decoration: none;
-            color: #0ff;
-            background-color: #222;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: 2px solid #0ff;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #ffda29;
+            color: #000;
+            position: sticky;
+            bottom: 0;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
         }
-
-        a:hover {
-            background-color: #0ff;
-            color: #222;
-        }
-
-        .footer {
-            margin-top: 50px;
+        footer p {
+            margin: 0;
             font-size: 1rem;
-            color: #777;
         }
-
-        .truck-emoji {
-            font-size: 3rem;
+        footer a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .animated-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            background: #ff69b4;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .animated-button:hover {
+            background: #ff1493;
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
-
-    <h1>Hey there, Cybertruck Fan! 🚀</h1>
-    <p>Welcome to my personal space. I'm sticking this page to my Cybertruck just for fun!</p>
-
-    <a href="https://www.example.com" target="_blank">Explore More</a>
-
-    <div class="footer">
-        <p>Powered by <span class="truck-emoji">🚚</span> and a little imagination!</p>
+    <header>
+        <h1>Big Yellow Duck's Cybertruck</h1>
+        <p>The Most Quacktastic Cybertruck You'll Ever See!</p>
+    </header>
+    <div class="container">
+        <!-- Gallery section moved to the top -->
+        <div class="section">
+            <h2>Gallery</h2>
+            <div class="photos">
+                <img src="1.jpeg" alt="Cybertruck photo 1">
+                <img src="2.jpeg" alt="Cybertruck photo 2">
+                <img src="3.jpeg" alt="Cybertruck photo 3">
+            </div>
+        </div>
+        <!-- Welcome section -->
+        <div class="section">
+            <h2>Welcome!</h2>
+            <p>
+                Hey there! Big Yellow Duck here, and this Cybertruck isn’t just a vehicle—it’s a star!  
+                Marvel at its brilliance, admire its shine, and most importantly, show it off with a selfie!  
+                Remember, this is purely for fun and not for profit. Let’s celebrate creativity and fun!
+            </p>
+            <button class="animated-button" onclick="alert('See the gallery above for photo inspiration! 🦆')">Take a Selfie</button>
+        </div>
+        <!-- Submission section -->
+        <div class="section">
+            <h2>Send Us Your Photos</h2>
+            <p>
+                Seen this beauty in the wild? Snap a photo and email it to <a href="mailto:ngzhewee@outlook.com">ngzhewee@outlook.com</a>.  
+                The coolest pics will be featured right here!
+            </p>
+        </div>
     </div>
-
+    <footer>
+        <p>
+            Built with 💛 by Big Yellow Duck. Follow my adventures and stay inspired! 🦆✨  
+            <a href="#">Back to Top</a>
+        </p>
+    </footer>
 </body>
 </html>
