@@ -5,42 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Yellow Duck's Cybertruck Showcase</title>
     <style>
+        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ffc0cb, #ff69b4); /* Vibrant gradient background */
-            color: #333;
+            background: linear-gradient(135deg, #fc466b, #3f5efb);
+            color: #fff;
         }
         header {
             text-align: center;
-            padding: 3rem 1rem;
-            background-color: #ffda29; /* Bright yellow */
+            padding: 4rem 1rem;
+            background: #ffda29;
             color: #000;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-family: 'Impact', sans-serif;
+            animation: glow 1.5s infinite alternate;
+            margin: 0;
+        }
+        header p {
+            margin: 1rem 0 0;
+            font-size: 1.4rem;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffda29, 0 0 50px #ffda29;
+            }
+            to {
+                text-shadow: 0 0 30px #fff, 0 0 40px #ffda29, 0 0 50px #ffda29, 0 0 60px #ffda29;
+            }
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        header h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            text-transform: uppercase;
-            font-family: 'Impact', sans-serif;
-            letter-spacing: 3px;
-            animation: textGlow 1.5s infinite alternate;
-        }
-        header p {
-            margin: 0.5rem 0 0;
+        nav a {
+            color: #fff;
+            text-decoration: none;
             font-size: 1.2rem;
+            margin: 0 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
         }
-        @keyframes textGlow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffd700, 0 0 40px #ffd700;
-            }
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700;
-            }
+        nav a:hover {
+            color: #ffda29;
         }
         .container {
             max-width: 1200px;
@@ -49,115 +65,171 @@
         }
         .section {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         .section h2 {
             font-size: 2.5rem;
             color: #ffda29;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-bottom: 1rem;
         }
         .section p {
             font-size: 1.2rem;
             line-height: 1.8;
+            color: #fff;
         }
-        .photos {
+        /* Intro Images */
+        .about-images {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .about-images img {
+            max-width: 45%; /* Larger size for intro images */
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .about-images img:hover {
+            transform: scale(1.05);
+        }
+        /* Gallery Images */
+        .gallery-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .gallery-images img {
+            max-width: 25%; /* Smaller size for gallery images */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .gallery-images img:hover {
+            transform: scale(1.05);
+        }
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
             margin-top: 1rem;
         }
-        .photos img {
-            max-width: 100%;
-            height: auto;
-            border: 5px solid #ffda29;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .contact-icons a {
+            color: #ffda29;
+            font-size: 1.5rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
         }
-        .photos img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        .contact-icons a i {
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+        }
+        .contact-icons a:hover {
+            color: #fc466b;
         }
         footer {
             text-align: center;
             padding: 2rem 1rem;
-            background-color: #ffda29;
-            color: #000;
-            position: sticky;
-            bottom: 0;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
-        }
-        footer p {
-            margin: 0;
-            font-size: 1rem;
+            background-color: #000;
+            color: #fff;
         }
         footer a {
-            color: #000;
+            color: #ffda29;
             font-weight: bold;
             text-decoration: none;
         }
         footer a:hover {
             text-decoration: underline;
         }
-        .animated-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #fff;
-            background: #ff69b4;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .animated-button:hover {
-            background: #ff1493;
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
     </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Big Yellow Duck's Cybertruck</h1>
+        <h1>Derrick's Cybertruck: Big Yellow Duck</h1>
         <p>The Most Quacktastic Cybertruck You'll Ever See!</p>
     </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <div class="container">
-        <!-- Gallery section moved to the top -->
-        <div class="section">
-            <h2>Gallery</h2>
-            <div class="photos">
-                <img src="1.jpeg" alt="Cybertruck photo 1">
-                <img src="2.jpeg" alt="Cybertruck photo 2">
-                <img src="3.jpeg" alt="Cybertruck photo 3">
+        <!-- About Section -->
+        <div class="section" id="about">
+            <h2>About Big Yellow Duck</h2>
+            <p>
+                Meet BIG YELLOW DUCK, the ultimate Cybertruck sensation that screams style, fun, and a touch of madness!  
+                This isn’t just a car; it’s a rolling billboard of pure quack energy, guaranteed to make heads turn and cameras flash.  
+                No, it’s not for sale, and no, it’s not commercial—this is just for the laughs, the vibes, and the love of something different.
+            </p>
+            <div class="about-images">
+                <img src="Main1.JPG" alt="Cybertruck Main 1">
+                <img src="Main2.JPG" alt="Cybertruck Main 2">
+            </div>
+            <p>
+                Behind the wheel of all this quacktastic energy is DERRICK, a senior in Computer Science at UC Berkeley.  
+                Known for cracking algorithms by day and stealing the show with Big Yellow Duck by night, Derrick is your go-to guy for mixing brains with flair.  
+                Whether he’s coding his way to success or showcasing his iconic ride, Derrick makes life an adventure worth watching.
+            </p>
+            <div class="about-images">
+                <img src="Derrick1.JPG" alt="Derrick at New York Stock Exchange">
+                <img src="Derrick2.JPG" alt="Derrick's selfie">
             </div>
         </div>
-        <!-- Welcome section -->
-        <div class="section">
-            <h2>Welcome!</h2>
-            <p>
-                Hey there! Big Yellow Duck here, and this Cybertruck isn’t just a vehicle—it’s a star!  
-                Marvel at its brilliance, admire its shine, and most importantly, show it off with a selfie!  
-                Remember, this is purely for fun and not for profit. Let’s celebrate creativity and fun!
-            </p>
-            <button class="animated-button" onclick="alert('See the gallery above for photo inspiration! 🦆')">Take a Selfie</button>
+        <!-- Gallery Section -->
+        <div class="section" id="gallery">
+            <h2>Gallery</h2>
+            <h3>Elsa</h3>
+            <div class="gallery-images">
+                <img src="Elsa3.jpeg" alt="Cybertruck with Elsa 1">
+                <img src="Elsa1.jpeg" alt="Cybertruck with Elsa 2">
+                <img src="Elsa2.jpeg" alt="Cybertruck with Elsa 3">
+            </div>
+            <h3>Leanid</h3>
+            <div class="gallery-images">
+                <img src="Leanid.JPG" alt="Cybertruck with Leanid">
+            </div>
+            <h3>Twelve</h3>
+            <div class="gallery-images">
+                <img src="Twelve.PNG" alt="Cybertruck with Twelve">
+            </div>
+            <h3>More People</h3>
+            <div class="gallery-images">
+                <img src="4.jpeg" alt="Cybertruck photo with Person 1">
+                <img src="5.jpeg" alt="Cybertruck photo with Person 2">
+                <img src="6.jpeg" alt="Cybertruck photo with Person 3">
+            </div>
         </div>
-        <!-- Submission section -->
-        <div class="section">
-            <h2>Send Us Your Photos</h2>
+        <!-- Contact Section -->
+        <div class="section" id="contact">
+            <h2>Contact Me</h2>
             <p>
-                Seen this beauty in the wild? Snap a photo and email it to <a href="mailto:ngzhewee@outlook.com">ngzhewee@outlook.com</a>.  
-                The coolest pics will be featured right here!
+                Got a picture, a question, or just want to share the love? Reach out to me here:
             </p>
+            <div class="contact-icons">
+                <a href="mailto:ngzhewee@outlook.com">
+                    <i class="fas fa-envelope"></i>Email: ngzhewee@outlook.com
+                </a>
+                <a href="https://instagram.com/derrickng_1024" target="_blank">
+                    <i class="fab fa-instagram"></i>Instagram: derrickng_1024
+                </a>
+                <a href="https://wechat.com" target="_blank">
+                    <i class="fab fa-weixin"></i>WeChat: derrickng_1024
+                </a>
+            </div>
         </div>
     </div>
     <footer>
