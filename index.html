@@ -1,242 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Yellow Duck's Cybertruck Showcase</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #fc466b, #3f5efb);
-            color: #fff;
-        }
-        header {
-            text-align: center;
-            padding: 4rem 1rem;
-            background: #ffda29;
-            color: #000;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        header h1 {
-            font-size: 4rem;
-            text-transform: uppercase;
-            font-family: 'Impact', sans-serif;
-            animation: glow 1.5s infinite alternate;
-            margin: 0;
-        }
-        header p {
-            margin: 1rem 0 0;
-            font-size: 1.4rem;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffda29, 0 0 50px #ffda29;
-            }
-            to {
-                text-shadow: 0 0 30px #fff, 0 0 40px #ffda29, 0 0 50px #ffda29, 0 0 60px #ffda29;
-            }
-        }
-        nav {
-            background: rgba(0, 0, 0, 0.8);
-            text-align: center;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin: 0 1rem;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #ffda29;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
-        .section {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        .section h2 {
-            font-size: 2.5rem;
-            color: #ffda29;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        .section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #fff;
-        }
-        /* Intro Images */
-        .about-images {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .about-images img {
-            max-width: 45%; /* Larger size for intro images */
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-        .about-images img:hover {
-            transform: scale(1.05);
-        }
-        /* Gallery Images */
-        .gallery-images {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .gallery-images img {
-            max-width: 25%; /* Smaller size for gallery images */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-        .gallery-images img:hover {
-            transform: scale(1.05);
-        }
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-        .contact-icons a {
-            color: #ffda29;
-            font-size: 1.5rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        .contact-icons a i {
-            margin-right: 0.5rem;
-            font-size: 1.8rem;
-        }
-        .contact-icons a:hover {
-            color: #fc466b;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: #000;
-            color: #fff;
-        }
-        footer a {
-            color: #ffda29;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Big Yellow Duck's Cybertruck Showcase – the most quacktastic ride with photos, gallery, and contact info for Derrick, CS senior at UC Berkeley.">
+  <title>Big Yellow Duck: The Cybertruck That Forgot How to Behave</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fc466b, #3f5efb);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #ffda29;
+      color: #000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      font-family: 'Impact', sans-serif;
+      animation: glow 1.5s infinite alternate;
+      margin: 0;
+    }
+
+    header h1 {
+        font-size: 4rem;
+        text-transform: uppercase;
+        font-family: 'Impact', sans-serif;
+        animation: glow 1.5s infinite alternate;
+        margin: 0;
+    }
+
+    header h2 {
+        font-size: 3rem;
+        font-family: 'Impact', sans-serif;
+        margin: 0.2rem 0 1rem;
+        animation: glow 1.5s infinite alternate;
+    }
+
+
+    header p {
+        margin: 1rem 0 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-shadow: 0 0 5px rgba(255, 218, 41, 0.8);
+    }
+
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffda29, 0 0 50px #ffda29;
+      }
+      to {
+        text-shadow: 0 0 30px #fff, 0 0 40px #ffda29, 0 0 50px #ffda29, 0 0 60px #ffda29;
+      }
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin: 0 1rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffda29;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .section {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      color: #ffda29;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #fff;
+    }
+
+    .about-images, .gallery-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .about-images img {
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: auto; /* Keeps natural ratio */
+        height: auto;
+        border-radius: 15px;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-images img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+
+    .gallery-person {
+        margin-bottom: 4rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .gallery-person h3 {
+        font-size: 1.6rem;
+        color: #ffda29;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #ffda29;
+        display: inline-block;
+        padding-bottom: 0.3rem;
+    }
+
+
+
+    .about-images img:hover,
+    .gallery-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-person {
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+
+    .gallery-person h3 {
+      font-size: 1.8rem;
+      color: #ffda29;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .contact-icons a {
+      color: #ffda29;
+      font-size: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-icons a i {
+      margin-right: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .contact-icons a:hover {
+      color: #fc466b;
+    }
+
+    footer {
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        padding: 2rem 1rem;
+        border-top: 2px solid rgba(255, 218, 41, 0.3);
+        text-align: center;
+        font-size: 1.05rem;
+        letter-spacing: 0.3px;
+        margin: 0;
+        box-shadow: inset 0 8px 12px -8px rgba(255, 218, 41, 0.15);
+    }
+
+
+    footer a {
+      color: #ffda29;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .about-images img,
+      .gallery-images img {
+        max-width: 90%;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <h1>Derrick's Cybertruck: Big Yellow Duck</h1>
-        <p>The Most Quacktastic Cybertruck You'll Ever See!</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
-        <!-- About Section -->
-        <div class="section" id="about">
-            <h2>About Big Yellow Duck</h2>
-            <p>
-                Meet BIG YELLOW DUCK, the ultimate Cybertruck sensation that screams style, fun, and a touch of madness!  
-                This isn’t just a car; it’s a rolling billboard of pure quack energy, guaranteed to make heads turn and cameras flash.  
-                No, it’s not for sale, and no, it’s not commercial—this is just for the laughs, the vibes, and the love of something different.
-            </p>
-            <div class="about-images">
-                <img src="Main1.JPG" alt="Cybertruck Main 1">
-                <img src="Main2.JPG" alt="Cybertruck Main 2">
-            </div>
-            <p>
-                Behind the wheel of all this quacktastic energy is DERRICK, a senior in Computer Science at UC Berkeley.  
-                Known for cracking algorithms by day and stealing the show with Big Yellow Duck by night, Derrick is your go-to guy for mixing brains with flair.  
-                Whether he’s coding his way to success or showcasing his iconic ride, Derrick makes life an adventure worth watching.
-            </p>
-            <div class="about-images">
-                <img src="Derrick1.JPG" alt="Derrick at New York Stock Exchange">
-                <img src="Derrick2.JPG" alt="Derrick's selfie">
-            </div>
+<body id="top">
+  <header>
+    <h1 style="margin-bottom: 0;">Big Yellow Duck:</h1>
+    <h2 style="margin-top: 0; font-size: 3rem;">The Cybertruck That Forgot How to Behave</h2>
+    <p>Piloted by Derrick — forging AI futures by day, unleashing duck energy by night.</p>
+  </header>
+  
+  <nav aria-label="Main Navigation">
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="index_cn.html" style="float: right; text-transform: none;">简体中文</a>
+  </nav>
+  
+  <div class="container">
+    <!-- About Section -->
+    <div class="section" id="about" style="text-align: left;">
+        <h2 style="text-align: center;">About Big Yellow Duck</h2>
+      
+        <p style="text-indent: 2em; margin-bottom: 1.5em;">
+          I’m <strong>Big Yellow Duck</strong> — draped in <strong>high-voltage pink</strong>, rocking a <em>giant duck head</em>, and raining <strong>yuan</strong> like it’s <em>performance art</em>.  
+          I’m not here to fit in — <strong>I’m here to disrupt</strong>.  
+          I roll like a <em>meme with horsepower</em>, a <strong>billboard with a VIN</strong>, a <em>glitch in the Matrix</em> that somehow got street legal.  
+          I’m part <strong>statement</strong>, part <strong>experiment</strong>, and <strong>entirely unapologetic</strong>.  
+          Built on <strong>steel</strong> and <strong>sarcasm</strong>, I blur the line between <em>machine and myth</em> — and honestly, I wouldn’t have it any other way.
+        </p>
+      
+        <div class="about-images">
+          <img src="about_images/Main1.JPG" alt="Cybertruck Main 1" loading="lazy">
+          <img src="about_images/Main2.JPG" alt="Cybertruck Main 2" loading="lazy">
         </div>
-        <!-- Gallery Section -->
-        <div class="section" id="gallery">
-            <h2>Gallery</h2>
-            <h3>Elsa</h3>
-            <div class="gallery-images">
-                <img src="Elsa3.jpeg" alt="Cybertruck with Elsa 1">
-                <img src="Elsa1.jpeg" alt="Cybertruck with Elsa 2">
-                <img src="Elsa2.jpeg" alt="Cybertruck with Elsa 3">
-            </div>
-            <h3>Leanid</h3>
-            <div class="gallery-images">
-                <img src="Leanid.JPG" alt="Cybertruck with Leanid">
-            </div>
-            <h3>Twelve</h3>
-            <div class="gallery-images">
-                <img src="Twelve.PNG" alt="Cybertruck with Twelve">
-            </div>
-            <h3>More People</h3>
-            <div class="gallery-images">
-                <img src="4.jpeg" alt="Cybertruck photo with Person 1">
-                <img src="5.jpeg" alt="Cybertruck photo with Person 2">
-                <img src="6.jpeg" alt="Cybertruck photo with Person 3">
-            </div>
+      
+        <p style="text-indent: 2em; margin-top: 2em; margin-bottom: 1.5em;">
+          And speaking of the <em>chaos coordinator</em> behind the wheel — meet <strong>Derrick</strong>.  
+          He’s a senior in <strong>Computer Science at UC Berkeley</strong> (<em>Class of 2025</em>), now diving headfirst into graduate studies and the world of <strong>Artificial Intelligence</strong>.  
+          <strong>Malaysian by origin</strong>, Derrick’s roots and experience stretch across <strong>China</strong> and <strong>Southeast Asia</strong>, grounded in a family legacy of <strong>industry</strong> and <strong>global business</strong>.  
+          He’s as comfortable <strong>debugging code</strong> as he is <strong>navigating boardrooms</strong> — with a deep interest in both primary and secondary market investments spanning <em>startups</em>, <em>real estate</em>, and <em>structured finance</em>.  
+          <strong>Brains, vision, and a bit of duck-fueled boldness</strong> — that’s Derrick.
+        </p>
+      
+        <div class="about-images">
+          <img src="about_images/Derrick1.JPG" alt="Derrick at NYSE" loading="lazy">
+          <img src="about_images/Derrick2.jpeg" alt="Derrick selfie with Cybertruck" loading="lazy">
         </div>
-        <!-- Contact Section -->
-        <div class="section" id="contact">
-            <h2>Contact Me</h2>
-            <p>
-                Got a picture, a question, or just want to share the love? Reach out to me here:
+      
+        <p style="text-indent: 2em; margin-top: 2em; margin-bottom: 1.5em;">
+          When Derrick’s off the grid, he’s still very much in motion.  
+          <strong>Precision on the golf course</strong>, <strong>chaos at a rave</strong> — he plays both sides like a well-written algorithm.  
+          He’s the guy who’ll hop a plane just to chase a sunset in a new city, and the one who somehow convinces a group of friends that clubbing till sunrise is a form of team bonding.  
+          He’s jumped out of a plane solo — not for the thrill, but to prove to himself he could.  
+          For Derrick, <em>fun isn’t just a break from work</em> — it’s a way to <strong>test limits</strong>, <strong>read people</strong>, and <strong>stay sharp</strong>.  
+          Because when your life’s moving at <strong>Duck-speed</strong>, you learn to balance grind with gravity.
+        </p>
+      
+        <div class="about-images">
+          <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            <img src="about_images/Travel.jpeg" alt="Derrick traveling" style="flex: 1 1 45%;" loading="lazy">
+            <img src="about_images/Skydive.jpeg" alt="Derrick skydiving" style="flex: 1 1 45%;" loading="lazy">
+          </div>
+          <div style="display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+            <img src="about_images/Club.jpeg" alt="Derrick clubbing" style="flex: 1 1 45%;" loading="lazy">
+            <img src="about_images/Rave.jpeg" alt="Derrick at rave" style="flex: 1 1 45%;" loading="lazy">
+          </div>
+        </div>
+      </div>
+      
+    
+    <!-- Gallery Section -->
+    <div class="section hidden" id="gallery">
+        <div style="text-align: left; max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: rgba(255,255,255,0.08); border-left: 4px solid #ffda29; border-radius: 10px; font-size: 1.15rem; line-height: 1.9; color: #fff;">
+            <p style="margin-bottom: 1.5rem;">
+              <strong style="font-size: 1.25rem;">Caught in the wild — here’s the wall of fame.</strong><br><br>
+              These are just a few of the legends who’ve crossed paths with Big Yellow Duck and decided, “Yeah, I need a photo with that.”  
+              Whether it was love at first quack or just a moment of chaos, we’re here for it.
             </p>
-            <div class="contact-icons">
-                <a href="mailto:ngzhewee@outlook.com">
-                    <i class="fas fa-envelope"></i>Email: ngzhewee@outlook.com
-                </a>
-                <a href="https://instagram.com/derrickng_1024" target="_blank">
-                    <i class="fab fa-instagram"></i>Instagram: derrickng_1024
-                </a>
-                <a href="https://wechat.com" target="_blank">
-                    <i class="fab fa-weixin"></i>WeChat: derrickng_1024
-                </a>
-            </div>
+          
+            <p style="margin: 0;">
+              <strong>Want to be featured?</strong> Hit the <a href="#contact" style="color: #ffda29; font-weight: bold; text-decoration: underline;">Contact Me</a> page and send over your best shot — weird, wonderful, or just vibing.  
+              If it makes us smile, it goes on the board.
+            </p>
+          </div>
+          
+
+        <h2 style="text-align: center;">Gallery</h2>
+    
+        <div class="gallery-person">
+        <h3>Elsa</h3>
+        <div class="gallery-images">
+            <img src="gallery_images/Elsa.jpeg" alt="Cybertruck with Elsa" loading="lazy">
+        </div>
+        </div>
+    
+        <div class="gallery-person">
+        <h3>Leanid</h3>
+        <div class="gallery-images">
+            <img src="gallery_images/Leanid.JPG" alt="Cybertruck with Leanid" loading="lazy">
+        </div>
+        </div>
+    
+        <div class="gallery-person">
+        <h3>Nuemir</h3>
+        <div class="gallery-images">
+            <img src="gallery_images/Nuemir.jpeg" alt="Cybertruck with Nuemir" loading="lazy">
+        </div>
+        </div>
+    
+        <div class="gallery-person">
+        <h3>Yoyo</h3>
+        <div class="gallery-images">
+            <img src="gallery_images/Yoyo.PNG" alt="Cybertruck with Yoyo" loading="lazy">
+        </div>
         </div>
     </div>
-    <footer>
-        <p>
-            Built with 💛 by Big Yellow Duck. Follow my adventures and stay inspired! 🦆✨  
-            <a href="#">Back to Top</a>
+    
+    <!-- Contact Section -->
+    <div class="section hidden" id="contact">
+        <h2>Contact Me</h2>
+    
+        <p style="text-align: left; max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+        Got a photo with Big Yellow Duck? A question about the ride, the guy behind it, or just something quacktastic to share?
         </p>
-    </footer>
+    
+        <p style="text-align: left; max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+        Whether it’s business, banter, or brilliance, Derrick’s just a message away — and yes, he speaks and writes in Chinese (Mandarin) too, so feel free to reach out in whichever language flows best.
+        </p>
+    
+        <p style="text-align: left; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; font-style: italic;">
+        Don’t be shy — Duck energy is best when shared.
+        </p>
+    
+        <div class="contact-icons">
+        <a href="mailto:ngzhewee@outlook.com">
+            <i class="fas fa-envelope"></i>Email: ngzhewee@outlook.com
+        </a>
+        <a href="https://instagram.com/derrickng_1024" target="_blank">
+            <i class="fab fa-instagram"></i>Instagram: derrickng_1024
+        </a>
+        <a href="https://wechat.com" target="_blank">
+            <i class="fab fa-weixin"></i>WeChat: derrickng_1024
+        </a>
+        </div>
+    </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll(".section");
+      const allLinks = document.querySelectorAll("a[href^='#']");
+  
+      allLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href").substring(1);
+          const targetSection = document.getElementById(targetId);
+  
+          if (targetSection && targetSection.classList.contains("section")) {
+            e.preventDefault();
+  
+            sections.forEach(sec => sec.classList.add("hidden"));
+            targetSection.classList.remove("hidden");
+  
+            window.scrollTo({ top: targetSection.offsetTop - 80, behavior: 'smooth' });
+          }
+        });
+      });
+  
+      // Default to showing 'about'
+      document.getElementById("about").classList.remove("hidden");
+    });
+  </script>
+
+<footer>
+    <p style="margin-bottom: 0.3rem;">Built with 💛 by <strong>Big Yellow Duck</strong></p>
+    <p style="margin: 0.2rem 0;">Follow my adventures & stay inspired <span style="font-size: 1.2rem;">🦆✨</span></p>
+    <p style="margin-top: 0.8rem;"><a href="#top" style="color: #ffda29; text-decoration: underline;">Back to Top</a></p>
+</footer>
+
 </body>
 </html>

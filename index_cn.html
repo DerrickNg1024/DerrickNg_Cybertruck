@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="大黄鸭的赛博卡展示——最呱噪的座驾，含照片、画廊及来自加州大学伯克利分校计算机系高年级学生 Derrick 的联系信息。">
+  <title>大黄鸭：不按套路出牌的赛博卡</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fc466b, #3f5efb);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #ffda29;
+      color: #000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      font-family: 'Impact', sans-serif;
+      animation: glow 1.5s infinite alternate;
+      margin: 0;
+    }
+
+    header h2 {
+        font-size: 3rem;
+        font-family: 'Impact', sans-serif;
+        margin: 0.2rem 0 1rem;
+        animation: glow 1.5s infinite alternate;
+    }
+
+    header p {
+        margin: 1rem 0 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-shadow: 0 0 5px rgba(255, 218, 41, 0.8);
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffda29, 0 0 50px #ffda29;
+      }
+      to {
+        text-shadow: 0 0 30px #fff, 0 0 40px #ffda29, 0 0 50px #ffda29, 0 0 60px #ffda29;
+      }
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin: 0 1rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffda29;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .section {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      color: #ffda29;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #fff;
+    }
+
+    .about-images, .gallery-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .about-images img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 15px;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-images img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-person {
+        margin-bottom: 4rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .gallery-person h3 {
+        font-size: 1.6rem;
+        color: #ffda29;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #ffda29;
+        display: inline-block;
+        padding-bottom: 0.3rem;
+    }
+
+    .about-images img:hover,
+    .gallery-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-person {
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+
+    .gallery-person h3 {
+      font-size: 1.8rem;
+      color: #ffda29;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .contact-icons a {
+      color: #ffda29;
+      font-size: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-icons a i {
+      margin-right: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .contact-icons a:hover {
+      color: #fc466b;
+    }
+
+    footer {
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        padding: 2rem 1rem;
+        border-top: 2px solid rgba(255, 218, 41, 0.3);
+        text-align: center;
+        font-size: 1.05rem;
+        letter-spacing: 0.3px;
+        margin: 0;
+        box-shadow: inset 0 8px 12px -8px rgba(255, 218, 41, 0.15);
+    }
+
+    footer a {
+      color: #ffda29;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .about-images img,
+      .gallery-images img {
+        max-width: 90%;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body id="top">
+  <header>
+    <h1>大黄鸭：</h1>
+    <h2>那辆忘了规矩的赛博卡</h2>
+    <p>由 Derrick 驾驶 —— 白天塑造 AI 未来，晚上释放鸭鸭能量。</p>
+  </header>
+
+  <nav aria-label="主导航" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 1; text-align: center;">
+      <a href="#about">关于</a>
+      <a href="#gallery">画廊</a>
+      <a href="#contact">联系</a>
+    </div>
+    <div style="margin-left: auto;">
+      <a href="index.html" style="text-transform: none;">ENGLISH</a>
+    </div>
+  </nav>
+  
+
+  <div class="container">
+    <!-- 关于部分 -->
+    <!-- ...此处请粘贴“关于”、“画廊”、“联系”、“脚本”、“footer”的完整段落，我可继续发送完整代码到文件... -->
+    <div class="section" id="about" style="text-align: left;">
+      <h2 style="text-align: center;">关于大黄鸭</h2>
+    
+      <p style="text-indent: 2em; margin-bottom: 1.5em;">
+        我是 <strong>大黄鸭</strong> —— 披着 <strong>高压粉</strong>、头戴 <em>巨大鸭头</em>，撒着 <strong>人民币</strong>，就像在搞 <em>行为艺术</em>。
+        我不是来迎合的 —— <strong>我是来颠覆的</strong>。
+        我像一辆有马力的 <em>表情包</em>，有车架号的 <strong>广告牌</strong>，一个 <em>闯进现实世界的系统漏洞</em>。
+        我是 <strong>态度</strong>、<strong>实验</strong>，而且 <strong>毫无歉意</strong>。
+        建造在 <strong>钢铁</strong> 和 <strong>讽刺</strong>之上，我模糊了 <em>机器与神话</em> 的界限 —— 老实说，我就喜欢这样。
+      </p>
+    
+      <div class="about-images">
+        <img src="about_images/Main1.JPG" alt="赛博卡主图1" loading="lazy">
+        <img src="about_images/Main2.JPG" alt="赛博卡主图2" loading="lazy">
+      </div>
+
+      <p style="text-indent: 2em; margin-top: 2em; margin-bottom: 1.5em;">
+        说到这辆车背后的 <em>混乱指挥官</em> —— 认识一下 <strong>Derrick</strong>。
+        他是 <strong>加州大学伯克利分校计算机专业的高年级学生</strong>（<em>2025届</em>），目前正全力投身于研究生学习及 <strong>人工智能领域</strong>。
+        <strong>马来西亚人</strong>，但 Derrick 的根和经历横跨 <strong>中国</strong> 与 <strong>东南亚</strong>，植根于一个拥有 <strong>实业与国际商业</strong>背景的家庭。
+        他既擅长 <strong>调试代码</strong>，也能轻松 <strong>驾驭董事会</strong>，同时对一级和二级市场的 <em>创业投资</em>、<em>房地产</em> 和 <em>结构化金融</em> 深有研究。
+        <strong>头脑、远见，还有一份鸭力加持的胆量</strong> —— 这就是 Derrick。
+      </p>
+
+      <div class="about-images">
+        <img src="about_images/Derrick1.JPG" alt="Derrick 在纽约证券交易所" loading="lazy">
+        <img src="about_images/Derrick2.jpeg" alt="Derrick 与赛博卡自拍" loading="lazy">
+      </div>
+
+      <p style="text-indent: 2em; margin-top: 2em; margin-bottom: 1.5em;">
+        即使离线，Derrick 也依然动感十足。
+        <strong>高尔夫球场上的精确</strong>，<strong>电音派对中的混乱</strong> —— 他就像个写得很好的算法，能驾驭两种模式。
+        他是那种为了追逐异地日落随时起飞的人，也是那个能说服朋友们把通宵蹦迪当作团队建设的人。
+        他独自跳过伞 —— 不是为了刺激，而是为了证明自己能做到。
+        对 Derrick 来说，<em>玩乐不是工作间隙</em> —— 而是 <strong>测试极限</strong>、<strong>读懂人性</strong> 和 <strong>保持敏锐</strong> 的方式。
+        因为当你的人生在 <strong>鸭速</strong> 运行时，你就得学会在坚持与释放间找到平衡。
+      </p>
+    
+      <div class="about-images">
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+          <img src="about_images/Travel.jpeg" alt="Derrick 旅行中" style="flex: 1 1 45%;" loading="lazy">
+          <img src="about_images/Skydive.jpeg" alt="Derrick 跳伞" style="flex: 1 1 45%;" loading="lazy">
+        </div>
+        <div style="display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+          <img src="about_images/Club.jpeg" alt="Derrick 夜店中" style="flex: 1 1 45%;" loading="lazy">
+          <img src="about_images/Rave.jpeg" alt="Derrick 在电音派对" style="flex: 1 1 45%;" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <!-- 画廊部分 -->
+    <div class="section hidden" id="gallery">
+      <div style="text-align: left; max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: rgba(255,255,255,0.08); border-left: 4px solid #ffda29; border-radius: 10px; font-size: 1.15rem; line-height: 1.9; color: #fff;">
+        <p style="margin-bottom: 1.5rem;">
+          <strong style="font-size: 1.25rem;">野外捕捉 —— 名人墙请看这里。</strong><br><br>
+          这些是曾与大黄鸭擦肩而过并决定“我要和它合张影”的传奇人物。  
+          无论是第一眼就被圈粉还是混乱中的偶遇，我们都全力支持！
+        </p>
+      
+        <p style="margin: 0;">
+          <strong>想被展示？</strong> 点击 <a href="#contact" style="color: #ffda29; font-weight: bold; text-decoration: underline;">联系我</a> 页面，发送你最棒的照片 —— 无论怪诞、迷人或只是纯 vibes。  
+          只要我们笑了，它就会出现在墙上。
+        </p>
+      </div>
+
+      <h2 style="text-align: center;">画廊</h2>
+
+      <div class="gallery-person">
+        <h3>Elsa</h3>
+        <div class="gallery-images">
+          <img src="gallery_images/Elsa.jpeg" alt="Elsa 与赛博卡合影" loading="lazy">
+        </div>
+      </div>
+
+      <div class="gallery-person">
+        <h3>Leanid</h3>
+        <div class="gallery-images">
+          <img src="gallery_images/Leanid.JPG" alt="Leanid 与赛博卡合影" loading="lazy">
+        </div>
+      </div>
+
+      <div class="gallery-person">
+        <h3>Nuemir</h3>
+        <div class="gallery-images">
+          <img src="gallery_images/Nuemir.jpeg" alt="Nuemir 与赛博卡合影" loading="lazy">
+        </div>
+      </div>
+
+      <div class="gallery-person">
+        <h3>Yoyo</h3>
+        <div class="gallery-images">
+          <img src="gallery_images/Yoyo.PNG" alt="Yoyo 与赛博卡合影" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <!-- 联系部分 -->
+    <div class="section hidden" id="contact">
+      <h2>联系我</h2>
+  
+      <p style="text-align: left; max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+        拍了张大黄鸭的照片？想了解这辆车、背后的那位或者有什么超级呱呱的事想分享？
+      </p>
+  
+      <p style="text-align: left; max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+        无论是商业、闲聊还是灵感碰撞，Derrick 都随时待命 —— 是的，他也能讲流利的中文（普通话），所以放心用你最舒服的语言来联系。
+      </p>
+  
+      <p style="text-align: left; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; font-style: italic;">
+        别害羞 —— 鸭鸭能量是用来分享的 🦆✨
+      </p>
+  
+      <div class="contact-icons">
+        <a href="mailto:ngzhewee@outlook.com">
+          <i class="fas fa-envelope"></i>邮箱：ngzhewee@outlook.com
+        </a>
+        <a href="https://instagram.com/derrickng_1024" target="_blank">
+          <i class="fab fa-instagram"></i>Instagram：derrickng_1024
+        </a>
+        <a href="https://wechat.com" target="_blank">
+          <i class="fab fa-weixin"></i>微信：derrickng_1024
+        </a>
+      </div>
+    </div>
+
+    <!-- 脚本控制导航切换 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".section");
+        const allLinks = document.querySelectorAll("a[href^='#']");
+    
+        allLinks.forEach(link => {
+          link.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+    
+            if (targetSection && targetSection.classList.contains("section")) {
+              e.preventDefault();
+    
+              sections.forEach(sec => sec.classList.add("hidden"));
+              targetSection.classList.remove("hidden");
+    
+              window.scrollTo({ top: targetSection.offsetTop - 80, behavior: 'smooth' });
+            }
+          });
+        });
+    
+        // 默认显示“关于”部分
+        document.getElementById("about").classList.remove("hidden");
+      });
+    </script>
+
+    <!-- 页脚 -->
+    <footer>
+      <p style="margin-bottom: 0.3rem;">由 <strong>大黄鸭</strong> 💛 精心打造</p>
+      <p style="margin: 0.2rem 0;">关注我的冒险旅程，保持灵感满满 <span style="font-size: 1.2rem;">🦆✨</span></p>
+      <p style="margin-top: 0.8rem;"><a href="#top" style="color: #ffda29; text-decoration: underline;">返回顶部</a></p>
+    </footer>
+
+  </body>
+</html>
